@@ -6,6 +6,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
+
 # Flask app should start in global layout
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = actionRoute(req)
+    res = route_action(req)
     #
     # # res = json.dumps(res, indent=4)
     # # print(res)
@@ -27,12 +28,18 @@ def webhook():
     # r = make_response(json_convert)
     # r.headers['Content-Type'] = 'application/json'
     # return r
+    json_convert = json.dumps(res)
+
+    r = make_response(json_convert)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 
 
-def actionRoute(req):
+def route_action(req):
     if req.get("result").get("action") == "queryLine":
         print("this is queryLine")
-        return
+        res = makeWebhookResult(data)
+        return res
 
 
 if __name__ == '__main__':
