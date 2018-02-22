@@ -1,5 +1,6 @@
 
 import json
+import os
 
 from flask import Flask
 from flask import request
@@ -25,3 +26,10 @@ def webhook():
     # r = make_response(json_convert)
     # r.headers['Content-Type'] = 'application/json'
     # return r
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+
+    print("Starting app on port %d" % port)
+
+    app.run(debug=False, port=port, host='0.0.0.0')
