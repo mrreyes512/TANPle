@@ -25,15 +25,7 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     res = route_action(req)
-    #
-    # # res = json.dumps(res, indent=4)
-    # # print(res)
-    # # Converting res back into json output
-    # json_convert = json.dumps(res)
-    #
-    # r = make_response(json_convert)
-    # r.headers['Content-Type'] = 'application/json'
-    # return r
+
     json_convert = json.dumps(res)
 
     r = make_response(json_convert)
@@ -81,7 +73,7 @@ def route_action(req):
 def process_query_line():
     data = intents.query_line.get_data()
 
-    speech = "The line looks like:\n"
+    speech = "The line looks like:\n\n"
     speech = speech + data
     print(speech)
 
@@ -89,19 +81,6 @@ def process_query_line():
         "speech": speech,
         "displayText": speech
     }
-
-
-# def make_webhook_result(data):
-#     pass
-#     speech = "The line looks like:"
-#     speech = speech + s
-#     print("Response:")
-#     print(speech)
-#
-#     return {
-#         "speech": speech,
-#         "displayText": speech
-#     }
 
 
 if __name__ == '__main__':

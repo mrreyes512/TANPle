@@ -21,8 +21,8 @@ def format_records(result):
 
     # Table customizations
     tab.header(headings)
-    tab.set_deco(texttable.Texttable.HEADER | texttable.Texttable.VLINES)
-    # tab.set_deco(texttable.Texttable.HEADER)
+    # tab.set_deco(texttable.Texttable.HEADER | texttable.Texttable.VLINES)
+    tab.set_deco(texttable.Texttable.VLINES)
     tab.set_chars(['-', ':', '+', '-'])
     tab.set_cols_align(['r', 'c', 'l'])
 
