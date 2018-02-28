@@ -3,7 +3,8 @@ import json
 import os
 import psycopg2
 
-import intents.query_line as int_ql
+import intents.query_line
+# from intents.query_line import get_data
 
 from urllib import parse
 
@@ -63,10 +64,23 @@ def db_connection(db_query):
 
 def route_action(req):
     if req.get("result").get("action") == "queryLine":
-        int_ql.get_data()
-        print("this is queryLine")
-        # res = make_webhook_result(data)
-        return #res
+        res = process_query_line()
+        return res
+    elif req.get("result").get("action") == "otherAction":
+        # res = process_other_action(req)
+        # return res
+        pass
+    else:
+        speech = "I didn't understand that action"
+        return {
+                "speech": speech,
+                "displayText": speech
+        }
+
+
+def process_query_line():
+    data = intents.query_line.get_data()
+    print(data)
 
 
 # def make_webhook_result(data):

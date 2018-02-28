@@ -1,4 +1,4 @@
-
+# TODO: This file can probably be deleted now.
 import texttable
 import prettytable
 
