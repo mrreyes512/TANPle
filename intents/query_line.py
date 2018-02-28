@@ -2,19 +2,18 @@
 import texttable
 
 import app
+# FIXME: @Graham: how do i import a var to make this PEP8?
 import heroku_db_creds
 
 
 def get_data():
     db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
     result = app.db_connection(db_query)
+    # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
+    return result
 
-    formatted = format_records(result)
-
-    # package up formatted response in json
-
-    # response = json.loads(formatted)
-    return formatted
+    # pretty_result = format_records(result)
+    # return pretty_result
 
 
 def format_records(result):
@@ -25,17 +24,10 @@ def format_records(result):
     for row in result:
         tab.add_row(row)
 
-    s = tab.draw()
-    print(s)
-    speech = "The line looks like:"
-    speech = speech + s
-    print("Response:")
-    print(speech)
+    table = tab.draw()
+    print(table)
 
-    return {
-        "speech": speech,
-        "displayText": speech
-    }
+    return table
 
 if __name__ == '__main__':
     get_data()

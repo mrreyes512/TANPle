@@ -71,6 +71,15 @@ def route_action(req):
 
 # def make_webhook_result(data):
 #     pass
+#     speech = "The line looks like:"
+#     speech = speech + s
+#     print("Response:")
+#     print(speech)
+#
+#     return {
+#         "speech": speech,
+#         "displayText": speech
+#     }
 
 
 if __name__ == '__main__':
