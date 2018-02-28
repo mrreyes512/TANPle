@@ -80,7 +80,15 @@ def route_action(req):
 
 def process_query_line():
     data = intents.query_line.get_data()
-    print(data)
+
+    speech = "The line looks like:\n"
+    speech = speech + data
+    print(speech)
+
+    return {
+        "speech": speech,
+        "displayText": speech
+    }
 
 
 # def make_webhook_result(data):

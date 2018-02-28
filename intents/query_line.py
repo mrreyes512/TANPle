@@ -30,9 +30,9 @@ def format_records(result):
         tab.add_row(row)
 
     table = tab.draw()
-    print('# Texttable Format')
-    print(table)
-    print('')
+    # print('# Texttable Format')
+    # print(table)
+    # print('')
 
     return table
 
