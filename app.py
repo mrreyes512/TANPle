@@ -4,7 +4,6 @@ import os
 import psycopg2
 
 import intents.query_line
-# from intents.query_line import get_data
 
 from urllib import parse
 
@@ -58,12 +57,15 @@ def route_action(req):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()
         return res
+    elif req.get("result").get("action") == "createTicket":
+        res = process_create_ticket(req)
+        return res
     elif req.get("result").get("action") == "otherAction":
         # res = process_other_action(req)
         # return res
         pass
     else:
-        speech = "I didn't understand that action"
+        speech = "I didn't understand that action(webhook response)"
         return {
                 "speech": speech,
                 "displayText": speech
@@ -73,7 +75,7 @@ def route_action(req):
 def process_query_line():
     data = intents.query_line.get_data()
 
-    speech = "The line looks like:\n\n"
+    speech = "The current line looks like:\n\n"
     speech = speech + data
     print(speech)
 
@@ -81,6 +83,11 @@ def process_query_line():
         "speech": speech,
         "displayText": speech
     }
+
+
+def process_create_ticket(req):
+    print('this is create ticket')
+    pass
 
 
 if __name__ == '__main__':
