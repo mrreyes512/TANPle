@@ -23,13 +23,14 @@ class Linedb(db.Model):
     __tablename__ = "testtable"
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.Text(), nullable=False)
-    last_name = db.Column(db.Text())
-    tech_id = db.Column(db.Text())
     issue_type = db.Column(db.Text(), nullable=False)
-    issue_details = db.Column(db.Text())
     callback_method = db.Column(db.Text(), nullable=False)
-    callback_details = db.Column(db.Text())
-    que_notes = db.Column(db.Text())
+    # TODO come back to make these work. Focus on MVP for v1
+    # last_name = db.Column(db.Text())
+    # tech_id = db.Column(db.Text())
+    # issue_details = db.Column(db.Text())
+    # callback_details = db.Column(db.Text())
+    # que_notes = db.Column(db.Text())
 
 
 @app.route('/webhook', methods=['POST'])
