@@ -20,17 +20,29 @@ db = SQLAlchemy(app)
 
 
 class Linedb(db.Model):
-    __tablename__ = "testtable"
+
+    __tablename__ = "mvp_table"
+
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.Text(), nullable=False)
     issue_type = db.Column(db.Text(), nullable=False)
     callback_method = db.Column(db.Text(), nullable=False)
+    callback_details = db.Column(db.Text())
     # TODO come back to make these work. Focus on MVP for v1
     # last_name = db.Column(db.Text())
     # tech_id = db.Column(db.Text())
     # issue_details = db.Column(db.Text())
-    # callback_details = db.Column(db.Text())
     # que_notes = db.Column(db.Text())
+
+    def __init__(self, first_name, issue_type, callback_method, callback_details):
+        self.first_name = first_name
+        self.issue_type = issue_type
+        self.callback_method = callback_method
+        self.callback_details = callback_details
+
+# customer = Linedb('Mark', 'cpe issues', 'phone', '512 585 5555')
+# db.session.add(customer)
+# db.session.commit()
 
 
 @app.route('/webhook', methods=['POST'])
