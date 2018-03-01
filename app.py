@@ -10,10 +10,26 @@ from urllib import parse
 from flask import Flask
 from flask import request
 from flask import make_response
-
+from flask.ext.sqlalchemy import SQLAlchemy
 
 # Flask app should start in global layout
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+
+class Linedb(db.Model):
+    __tablename__ = "testtable"
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.Text(), nullable=False)
+    last_name = db.Column(db.Text())
+    tech_id = db.Column(db.Text())
+    issue_type = db.Column(db.Text(), nullable=False)
+    issue_details = db.Column(db.Text())
+    callback_method = db.Column(db.Text(), nullable=False)
+    callback_details = db.Column(db.Text())
+    que_notes = db.Column(db.Text())
 
 
 @app.route('/webhook', methods=['POST'])

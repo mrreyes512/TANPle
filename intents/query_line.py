@@ -2,6 +2,7 @@
 import texttable
 
 import app
+
 # FIXME: @Graham: how do i import a var to make this PEP8?
 # import heroku_db_creds
 
