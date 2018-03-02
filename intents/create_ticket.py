@@ -8,13 +8,13 @@ import app
 
 
 def post_data(json_load):
-    print(json_load)
-    # first_name = json_load['result']['contexts']['parameters']['given-name']
+    # print(json_load)
+    first_name = json_load['result']['contexts']['parameters']['given-name']
     # issue_type = json_load['result']['contexts']['parameters']['given-name']
     # callback_method = json_load['result']['contexts']['parameters']['given-name']
     # callback_details = json_load['result']['contexts']['parameters']['given-name']
     # print("in post_data")
-    # print("first_name:" + first_name)
+    print("first_name:" + first_name)
 
     # db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
     # result = app.db_connection(db_query)
