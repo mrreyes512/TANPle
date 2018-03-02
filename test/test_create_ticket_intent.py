@@ -45,7 +45,7 @@ def sampleJsonInput():
                                 "last-name": ""
                             },
                             "lifespan": 0
-                        },
+                        }
                     ],
                     "metadata": {
                       "intentId": "644e2344-1458-49a3-ac6b-60c529cf58d2",

@@ -53,13 +53,15 @@ def webhook():
     # pdb.set_trace()
     # assert request is not None
     req = request.get_json(silent=True, force=True)
+    # req = json.loads(request.data)
+
 
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    json_object = json.loads(req)
+    # json_object = json.loads(req)
 
-    res = route_action(req, json_object)
+    res = route_action(req)
 
     json_convert = json.dumps(res)
 
@@ -89,12 +91,12 @@ def db_connection(db_query):
     return query_results
 
 
-def route_action(req, json_object):
+def route_action(req):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()
         return res
     elif req.get("result").get("action") == "createTicket":
-        res = process_create_ticket(json_object)
+        res = process_create_ticket(req)
         return res
     elif req.get("result").get("action") == "otherAction":
         # res = process_other_action(req)
@@ -121,8 +123,8 @@ def process_query_line():
     }
 
 
-def process_create_ticket(json_object):
-    post = intents.create_ticket.post_data(json_object)
+def process_create_ticket(req):
+    post = intents.create_ticket.post_data(req)
     print('this is create ticket')
     pass
 

@@ -4,9 +4,15 @@ import texttable
 import app
 
 
-def post_data(json_object):
+def post_data(req):
     # print(json_object)
-    first_name = json_object[0]['result']['contexts']['parameters']['given-name']
+    contexts = req['result']['contexts']
+
+    name_list = [name['parameters']['given-name'] for name in contexts]
+
+    first_name = name_list[0]
+
+
     # issue_type = json_load['result']['contexts']['parameters']['given-name']
     # callback_method = json_load['result']['contexts']['parameters']['given-name']
     # callback_details = json_load['result']['contexts']['parameters']['given-name']
