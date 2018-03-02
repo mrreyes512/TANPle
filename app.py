@@ -53,7 +53,9 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = route_action(req)
+    json_load = json.loads(req)
+
+    res = route_action(req, json_load)
 
     json_convert = json.dumps(res)
 
@@ -83,12 +85,12 @@ def db_connection(db_query):
     return query_results
 
 
-def route_action(req):
+def route_action(req, json_load):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()
         return res
     elif req.get("result").get("action") == "createTicket":
-        res = process_create_ticket(req)
+        res = process_create_ticket(json_load)
         return res
     elif req.get("result").get("action") == "otherAction":
         # res = process_other_action(req)
@@ -115,8 +117,8 @@ def process_query_line():
     }
 
 
-def process_create_ticket(req):
-    post = intents.create_ticket.post_data(req)
+def process_create_ticket(json_load):
+    post = intents.create_ticket.post_data(json_load)
     print('this is create ticket')
     pass
 

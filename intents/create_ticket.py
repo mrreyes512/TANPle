@@ -7,11 +7,11 @@ import app
 # import heroku_db_creds
 
 
-def post_data(req):
-    first_name = req['result']['contexts']['parameters']['given-name']
-    # issue_type = req['result']['contexts']['parameters']['given-name']
-    # callback_method = req['result']['contexts']['parameters']['given-name']
-    # callback_details = req['result']['contexts']['parameters']['given-name']
+def post_data(json_load):
+    first_name = json_load['result']['contexts']['parameters']['given-name']
+    # issue_type = json_load['result']['contexts']['parameters']['given-name']
+    # callback_method = json_load['result']['contexts']['parameters']['given-name']
+    # callback_details = json_load['result']['contexts']['parameters']['given-name']
     print("in post_data")
     print("first_name:" + first_name)
 
