@@ -3,13 +3,10 @@ import texttable
 
 import app
 
-# REVIEW: @Graham: how do i import a var to make this PEP8?
-# import heroku_db_creds
 
-
-def post_data(json_load):
-    # print(json_load)
-    first_name = json_load['result']['contexts']['parameters']['given-name']
+def post_data(json_object):
+    # print(json_object)
+    first_name = json_object[0]['result']['contexts']['parameters']['given-name']
     # issue_type = json_load['result']['contexts']['parameters']['given-name']
     # callback_method = json_load['result']['contexts']['parameters']['given-name']
     # callback_details = json_load['result']['contexts']['parameters']['given-name']

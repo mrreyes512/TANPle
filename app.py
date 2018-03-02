@@ -13,6 +13,8 @@ from flask import request
 from flask import make_response
 from flask.ext.sqlalchemy import SQLAlchemy
 
+import pdb
+
 # Flask app should start in global layout
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
@@ -48,14 +50,16 @@ class Linedb(db.Model):
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
+    # pdb.set_trace()
+    # assert request is not None
     req = request.get_json(silent=True, force=True)
 
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    json_load = json.dumps(req)
+    json_object = json.loads(req)
 
-    res = route_action(req, json_load)
+    res = route_action(req, json_object)
 
     json_convert = json.dumps(res)
 
@@ -85,12 +89,12 @@ def db_connection(db_query):
     return query_results
 
 
-def route_action(req, json_load):
+def route_action(req, json_object):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()
         return res
     elif req.get("result").get("action") == "createTicket":
-        res = process_create_ticket(json_load)
+        res = process_create_ticket(json_object)
         return res
     elif req.get("result").get("action") == "otherAction":
         # res = process_other_action(req)
@@ -117,8 +121,8 @@ def process_query_line():
     }
 
 
-def process_create_ticket(json_load):
-    post = intents.create_ticket.post_data(json_load)
+def process_create_ticket(json_object):
+    post = intents.create_ticket.post_data(json_object)
     print('this is create ticket')
     pass
 
