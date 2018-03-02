@@ -27,6 +27,26 @@ def sampleJsonInput():
                     "action": "createTicket",
                     "actionIncomplete": false,
                     "parameters": {},
+                    "contexts": [
+                        {
+                            "name": "1-createticket-collectauth-followup",
+                            "parameters": {
+                                "given-name.original": "mark",
+                                "callback_method.original": "call",
+                                "last-name.original": "",
+                                "issue_sum.original": "3",
+                                "tech_id": "",
+                                "tech_id.original": "",
+                                "given-name": "Mark",
+                                "callback_method": "phone",
+                                "issue_sum": "Firmware Upgrade",
+                                "callback_details": "743 923 1234",
+                                "callback_details.original": "743 923 1234",
+                                "last-name": ""
+                            },
+                            "lifespan": 0
+                        },
+                    ],
                     "metadata": {
                       "intentId": "644e2344-1458-49a3-ac6b-60c529cf58d2",
                       "webhookUsed": "true",
