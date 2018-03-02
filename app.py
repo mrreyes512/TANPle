@@ -53,7 +53,7 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    json_load = json.loads(req)
+    json_load = json.dumps(req)
 
     res = route_action(req, json_load)
 
