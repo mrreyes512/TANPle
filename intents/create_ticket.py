@@ -8,7 +8,10 @@ def post_data(req):
     # print(json_object)
     contexts = req['result']['contexts']
 
-    name_list = [name['parameters'].get('given-name') for name in contexts]
+    # list compren
+    # [x * 2 for x in [1, 2, 3, 4]]  #=> [2, 4, 6, 8]
+    name_list = [name['parameters'].get('given-name') for name in contexts
+                 if name['parameters'].get('given-name') is not None]
 
     first_name = name_list[0]
 
