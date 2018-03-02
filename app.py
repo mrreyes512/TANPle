@@ -4,6 +4,7 @@ import os
 import psycopg2
 
 import intents.query_line
+import intents.create_ticket
 
 from urllib import parse
 
@@ -28,7 +29,7 @@ class Linedb(db.Model):
     issue_type = db.Column(db.Text(), nullable=False)
     callback_method = db.Column(db.Text(), nullable=False)
     callback_details = db.Column(db.Text())
-    # TODO come back to make these work. Focus on MVP for v1
+    # TODO come back to make the below work. Focus on MVP for v1
     # last_name = db.Column(db.Text())
     # tech_id = db.Column(db.Text())
     # issue_details = db.Column(db.Text())
@@ -40,7 +41,7 @@ class Linedb(db.Model):
         self.callback_method = callback_method
         self.callback_details = callback_details
 
-# customer = Linedb('Mark', 'cpe issues', 'phone', '512 585 5555')
+# customer = app.Linedb('Mark', 'cpe issues', 'phone', '512 585 5555')
 # db.session.add(customer)
 # db.session.commit()
 
@@ -115,6 +116,7 @@ def process_query_line():
 
 
 def process_create_ticket(req):
+    post = intents.create_ticket.post_data(req)
     print('this is create ticket')
     pass
 

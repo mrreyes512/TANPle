@@ -3,11 +3,18 @@ import texttable
 
 import app
 
-# FIXME: @Graham: how do i import a var to make this PEP8?
+# REVIEW: @Graham: how do i import a var to make this PEP8?
 # import heroku_db_creds
 
 
-def post_data():
+def post_data(req):
+    first_name = req['result']['conttexts']['parameters']['given-name']
+    # issue_type
+    # callback_method
+    # callback_details
+    print("in post_data")
+    print("first_name:" + first_name)
+
     db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
     result = app.db_connection(db_query)
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
