@@ -4,6 +4,7 @@ import os
 import psycopg2
 
 import intents.query_line
+import intents.query_ticket
 import intents.create_ticket
 
 from urllib import parse
@@ -43,9 +44,8 @@ class LineDB(db.Model):
         self.callback_method = callback_method
         self.callback_details = callback_details
 
-# customer = app.Linedb('Mark', 'cpe issues', 'phone', '512 585 5555')
-# db.session.add(customer)
-# db.session.commit()
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
 
 
 @app.route('/webhook', methods=['POST'])
@@ -97,9 +97,9 @@ def route_action(req):
     elif req.get("result").get("action") == "createTicket":
         res = process_create_ticket(req)
         return res
-    elif req.get("result").get("action") == "otherAction":
-        # res = process_other_action(req)
-        # return res
+    elif req.get("result").get("action") == "queryTicket":
+        res = process_query_ticket(req)
+        return res
         pass
     else:
         speech = "I didn't understand that action(webhook response)"
@@ -124,10 +124,22 @@ def process_query_line():
 
 def process_create_ticket(req):
     post = intents.create_ticket.post_data(req)
-    # print('this is create ticket')
 
     speech = "Added your ticket in with the below:\n\n"
     speech = speech + post
+
+    return {
+        "speech": speech,
+        "displayText": speech
+    }
+
+
+def process_query_ticket(req):
+    post = intents.query_ticket.get_ticket(req)
+
+    speech = "Just to verify, you're attempting to help out:\n\n"
+    speech = speech + post
+    speech = speech + "\n**Please respond with: 'yes, remove <number>'"
 
     return {
         "speech": speech,

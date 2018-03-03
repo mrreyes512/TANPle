@@ -7,32 +7,10 @@ import json
 # bot: Great thank you for helping: <post_summary> (could be handeled in a query_ticket function)
 # bot: Please respond: yes, remove 4
 
-# def delete_data(req):
-#     ticket_id = parse_data(req)
-#
-#     TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
-#
-#     query.filter_by(id=123).delete()
-#     app.db.session.add(ticket)
-#     app.db.session.commit()
-#
-#     ticket_id = app.LineDB(ticket_id)
-#
-#     post_summary = "Ticket ID : {}\nGiven Name : {}\nIssue Summary : {}\nCallback Method : {}\nCallback Details : {}".format(
-#         ticket_id,
-#         first_name,
-#         issue_type,
-#         callback_method,
-#         callback_details
-#     )
-#
-#     print(ticket_id)
-#
-#     return post_summary
 
-
-def query_ticket(req):
+def get_ticket(req):
     ticket_num = parse_data(req)
+    # ticket_num = 4
 
     try:
         row = app.LineDB.query.get(ticket_num)
@@ -62,18 +40,16 @@ def parse_data(req):
     # Using Python list comprehension to extract fields and filter None's
     contexts = req['result']['contexts']
 
-    ticket_list = [name['parameters'].get('ticket-id') for name in contexts
-                 if name['parameters'].get('ticket-id') is not None]
+    ticket_list = [name['parameters'].get('ticket_id') for name in contexts
+                 if name['parameters'].get('ticket_id') is not None]
 
     ticket_id = ticket_list[0]
 
     return ticket_id
 
 
-
-
 if __name__ == '__main__':
     json_data = open('req.json', 'r').readlines()
     req = json.load(open('req.json'))
 
-    query_ticket(req)
+    get_ticket(req)

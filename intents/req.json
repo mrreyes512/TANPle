@@ -1,0 +1,90 @@
+{
+   "id":"cf880a09-cf74-4d04-83ce-6909df888318",
+   "timestamp":"2018-03-03T01:06:37.346Z",
+   "lang":"en",
+   "result":{
+      "source":"agent",
+      "resolvedQuery":"Call me at 512 4855555",
+      "speech":"",
+      "action":"queryTicket",
+      "actionIncomplete":"False",
+      "parameters":{
+         "callback_method":"phone",
+         "callback_details":"512 4855555"
+      },
+      "contexts":[
+         {
+            "name":"1-createticket-collectauth-followup",
+            "parameters":{
+               "given-name.original":"mark",
+               "callback_method.original":"Call",
+               "last-name.original":"",
+               "issue_sum.original":"3",
+               "tech_id":"",
+               "tech_id.original":"",
+               "ticket_id": "6",
+               "given-name":"Mark",
+               "callback_method":"phone",
+               "issue_sum":"Firmware Upgrade",
+               "callback_details":"512 4855555",
+               "callback_details.original":"512 4855555",
+               "last-name":""
+            },
+            "lifespan":0
+         },
+         {
+            "name":"1-createticket-collectauth-collectissue-followup",
+            "parameters":{
+               "callback_method.original":"Call",
+               "issue_sum.original":"3",
+               "callback_method":"phone",
+               "issue_sum":"Firmware Upgrade",
+               "callback_details":"512 4855555",
+               "callback_details.original":"512 4855555"
+            },
+            "lifespan":0
+         },
+         {
+            "name":"info_createticket",
+            "parameters":{
+               "given-name.original":"mark",
+               "callback_method.original":"Call",
+               "last-name.original":"",
+               "issue_sum.original":"3",
+               "tech_id":"",
+               "tech_id.original":"",
+               "given-name":"Mark",
+               "callback_method":"phone",
+               "issue_sum":"Firmware Upgrade",
+               "callback_details":"512 4855555",
+               "callback_details.original":"512 4855555",
+               "last-name":""
+            },
+            "lifespan":5
+         }
+      ],
+      "metadata":{
+         "intentId":"stuff",
+         "webhookUsed":"true",
+         "webhookForSlotFillingUsed":"false",
+         "endConversation":"True",
+         "intentName":"1-createTicket - collectAuth - collectIssue - collectFollowup"
+      },
+      "fulfillment":{
+         "speech":"zzz... I may have been sleeping. Can you try to open another ticket? (probably an error in webhook response)",
+         "messages":[
+            {
+               "type":0,
+               "speech":"zzz... I may have been sleeping. Can you try to open another ticket? \n(probably an error in webhook response)"
+            }
+         ]
+      },
+      "score":0.9100000262260437
+   },
+   "status":{
+      "code":200,
+      "errorType":"success",
+      "webhookTimedOut":"False"
+   },
+   "sessionId":"stuff"
+}

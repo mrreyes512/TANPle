@@ -1,6 +1,4 @@
 
-import texttable
-
 import app
 import json
 
@@ -8,12 +6,14 @@ import json
 def post_data(req):
     first_name, issue_type, callback_method, callback_details = parse_data(req)
 
+    # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
     customer = app.LineDB(first_name, issue_type, callback_method, callback_details)
     app.db.session.add(customer)
     app.db.session.commit()
 
     ticket_id = 2
-    post_summary = "Ticket ID : {}\nGiven Name : {}\nIssue Summary : {}\nCallback Method : {}\nCallback Details : {}".format(
+    post_summary = "Ticket ID : {}\nGiven Name : {}\nIssue Summary : {}\n" \
+                   "Callback Method : {}\nCallback Details : {}".format(
         ticket_id,
         first_name,
         issue_type,
@@ -55,37 +55,6 @@ def parse_data(req):
         callback_details
     ]
 
-
-
-
-    # db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
-    # result = app.db_connection(db_query)
-    # # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
-    #
-    # pretty_result = format_records(result)
-    # return pretty_result
-
-
-# def format_records(result):
-#     tab = texttable.Texttable()
-#     headings = ['Ticket ID', 'First Name', 'Issue Type']
-#
-#     # Table customizations
-#     tab.header(headings)
-#     # tab.set_deco(texttable.Texttable.HEADER | texttable.Texttable.VLINES)
-#     tab.set_deco(texttable.Texttable.VLINES)
-#     tab.set_chars(['-', ':', '+', '-'])
-#     tab.set_cols_align(['r', 'c', 'l'])
-#
-#     for row in result:
-#         tab.add_row(row)
-#
-#     table = tab.draw()
-#     # print('# Texttable Format')
-#     # print(table)
-#     # print('')
-#
-#     return table
 
 if __name__ == '__main__':
     # json_data = open('req.json', 'r').readlines()
