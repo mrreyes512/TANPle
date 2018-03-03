@@ -23,7 +23,7 @@ def get_data():
 
 def format_records(result):
     tab = texttable.Texttable()
-    headings = ['Ticket ID', 'First Name', 'Issue Type', 'Callback Method', 'Callback Details']
+    headings = ['Ticket ID', 'Name', 'Issue', 'Callback Method', 'Details']
 
     # Table customizations
     tab.header(headings)
