@@ -2,12 +2,14 @@
 import texttable
 
 import app
+import pdb
 
 # REVIEW: @Graham: how do i import a var to make this PEP8?
 # import heroku_db_creds
 
 
 def get_data():
+    pdb.set_trace()
     db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
     result = app.db_connection(db_query)
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg

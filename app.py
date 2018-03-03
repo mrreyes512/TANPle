@@ -125,8 +125,15 @@ def process_query_line():
 
 def process_create_ticket(req):
     post = intents.create_ticket.post_data(req)
-    print('this is create ticket')
-    pass
+    # print('this is create ticket')
+
+    speech = "some stuff returned"
+    speech = speech + post
+
+    return {
+        "speech": speech,
+        "displayText": speech
+    }
 
 
 if __name__ == '__main__':
