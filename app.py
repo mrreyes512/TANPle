@@ -126,7 +126,7 @@ def process_create_ticket(req):
     post = intents.create_ticket.post_data(req)
     # print('this is create ticket')
 
-    speech = "some stuff returned\n"
+    speech = "Added your ticket in with the below:\n\n"
     speech = speech + post
 
     return {
