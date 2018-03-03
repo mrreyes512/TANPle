@@ -8,6 +8,10 @@ import json
 def post_data(req):
     first_name, issue_type, callback_method, callback_details = parse_data(req)
 
+    customer = app.LineDB(first_name, issue_type, callback_method, callback_details)
+    app.db.session.add(customer)
+    app.db.session.commit()
+
     ticket_id = 2
     post_summary = "Ticket ID : {}\nGiven Name : {}\nIssue Summary : {}\nCallback Method : {}\nCallback Details : {}".format(
         ticket_id,

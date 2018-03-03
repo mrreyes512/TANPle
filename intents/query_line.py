@@ -9,10 +9,13 @@ import pdb
 
 
 def get_data():
-    pdb.set_trace()
-    db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
+    # pdb.set_trace()
+    db_query = "SELECT * FROM public.mvp_table"
     result = app.db_connection(db_query)
+    # result = app.LineDB.query.all()
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
+
+    # print(result)
 
     pretty_result = format_records(result)
     return pretty_result
@@ -20,14 +23,14 @@ def get_data():
 
 def format_records(result):
     tab = texttable.Texttable()
-    headings = ['Ticket ID', 'First Name', 'Issue Type']
+    headings = ['Ticket ID', 'First Name', 'Issue Type', 'Callback Method', 'Callback Details']
 
     # Table customizations
     tab.header(headings)
     # tab.set_deco(texttable.Texttable.HEADER | texttable.Texttable.VLINES)
     tab.set_deco(texttable.Texttable.VLINES)
     tab.set_chars(['-', ':', '+', '-'])
-    tab.set_cols_align(['r', 'c', 'l'])
+    tab.set_cols_align(['r', 'r', 'l', 'l', 'l'])
 
     for row in result:
         tab.add_row(row)
@@ -40,4 +43,5 @@ def format_records(result):
     return table
 
 if __name__ == '__main__':
-    get_data()
+    table = get_data()
+    print(table)

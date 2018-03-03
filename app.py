@@ -22,7 +22,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-class Linedb(db.Model):
+class LineDB(db.Model):
 
     __tablename__ = "mvp_table"
 
@@ -54,7 +54,6 @@ def webhook():
     # assert request is not None
     req = request.get_json(silent=True, force=True)
     # req = json.loads(request.data)
-
 
     print("Request:")
     print(json.dumps(req, indent=4))
@@ -127,7 +126,7 @@ def process_create_ticket(req):
     post = intents.create_ticket.post_data(req)
     # print('this is create ticket')
 
-    speech = "some stuff returned"
+    speech = "some stuff returned\n"
     speech = speech + post
 
     return {
