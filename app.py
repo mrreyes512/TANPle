@@ -6,6 +6,7 @@ import psycopg2
 import intents.query_line
 import intents.query_ticket
 import intents.create_ticket
+import intents.delete_ticket
 
 from urllib import parse
 
@@ -101,6 +102,10 @@ def route_action(req):
         res = process_query_ticket(req)
         return res
         pass
+    elif req.get("result").get("action") == "deleteTicket":
+        res = process_delete_ticket(req)
+        return res
+        pass
     else:
         speech = "I didn't understand that action(webhook response)"
         return {
@@ -141,6 +146,19 @@ def process_query_ticket(req):
     speech = "Just to verify, you're attempting to help out:\n"
     speech = speech + post
     speech = speech + "\n\n**Please respond with: 'yes, remove <number>'"
+
+    print(speech)
+    return {
+        "speech": speech,
+        "displayText": speech
+    }
+
+
+def process_delete_ticket(req):
+    post = intents.delete_ticket.delete_data(req)
+
+    speech = "Attempting to remove ticket..\n"
+    speech = speech + post
 
     print(speech)
     return {
