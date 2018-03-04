@@ -23,7 +23,9 @@ def delete_data(req):
         app.db.session.rollback()
         row_info = "Not able to delete ticket ID : " + str(ticket_num)
 
-    except app.SQLAlchemy:
+    except:
+        # unable to add exception for:
+        # sqlalchemy.exc.DataError: (psycopg2.DataError) invalid input syntax for integer: "remove "
         app.db.session.rollback()
         print("There may be a bad WHERE clause: " + str(ticket_num))
 
