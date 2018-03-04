@@ -20,6 +20,7 @@ def delete_data(req):
         row_info = "Successfully removed Ticket ID : " + str(ticket_num)
 
     except AttributeError:
+        app.db.session.rollback()
         row_info = "Not able to delete ticket ID : " + str(ticket_num)
 
     print(row_info)

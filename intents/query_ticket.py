@@ -10,7 +10,7 @@ import json
 
 def get_ticket(req):
     ticket_num = parse_data(req)
-    # ticket_num = 4
+    # ticket_num = 9
 
     try:
         row = app.LineDB.query.get(ticket_num)
@@ -52,4 +52,4 @@ if __name__ == '__main__':
     json_data = open('req.json', 'r').readlines()
     req = json.load(open('req.json'))
 
-    get_ticket(req)
+    print(get_ticket(req))
