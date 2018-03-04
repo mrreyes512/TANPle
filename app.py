@@ -114,8 +114,8 @@ def process_query_line():
 
     speech = "The current line looks like:\n\n"
     speech = speech + data
-    print(speech)
 
+    print(speech)
     return {
         "speech": speech,
         "displayText": speech
@@ -128,6 +128,7 @@ def process_create_ticket(req):
     speech = "Added your ticket in with the below:\n\n"
     speech = speech + post
 
+    print(speech)
     return {
         "speech": speech,
         "displayText": speech
@@ -141,6 +142,7 @@ def process_query_ticket(req):
     speech = speech + post
     speech = speech + "\n\n**Please respond with: 'yes, remove <number>'"
 
+    print(speech)
     return {
         "speech": speech,
         "displayText": speech

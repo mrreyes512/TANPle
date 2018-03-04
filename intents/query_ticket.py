@@ -32,7 +32,7 @@ def get_ticket(req):
     except AttributeError:
         row_info = "Not finding a ticket ID : " + str(ticket_num)
 
-    print(row_info)
+    # print(row_info)
     return row_info
 
 
