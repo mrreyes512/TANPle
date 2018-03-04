@@ -14,7 +14,7 @@ def delete_data(req):
     try:
         row = app.LineDB.query.get(ticket_num)
         # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
-        app.db.session.add(row)
+        app.db.session.delete(row)
         app.db.session.commit()
 
         row_info = "Successfully removed Ticket ID : " + str(ticket_num)
