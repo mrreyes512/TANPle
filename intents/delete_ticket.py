@@ -23,11 +23,11 @@ def delete_data(req):
         app.db.session.rollback()
         row_info = "Not able to delete ticket ID : " + str(ticket_num)
 
-    except app.SQLAlchemy.exc.DataError:
+    except app.SQLAlchemy:
         app.db.session.rollback()
         print("There may be a bad WHERE clause: " + str(ticket_num))
 
-    print(row_info)
+    # print(row_info)
     return row_info
 
 
