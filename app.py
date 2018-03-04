@@ -137,9 +137,9 @@ def process_create_ticket(req):
 def process_query_ticket(req):
     post = intents.query_ticket.get_ticket(req)
 
-    speech = "Just to verify, you're attempting to help out:\n\n"
+    speech = "Just to verify, you're attempting to help out:\n"
     speech = speech + post
-    speech = speech + "\n**Please respond with: 'yes, remove <number>'"
+    speech = speech + "\n\n**Please respond with: 'yes, remove <number>'"
 
     return {
         "speech": speech,
