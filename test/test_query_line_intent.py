@@ -1,8 +1,10 @@
 import pytest
 import os
 from app import app
+import heroku_db_creds
 
-os.environ['DATABASE_URL'] = 'FIX_ME_TO_LOOK_AT ../database_creds.py'
+# os.environ['DATABASE_URL'] = 'FIX_ME_TO_LOOK_AT ../database_creds.py'
+
 
 @pytest.fixture
 def client(request):
@@ -54,6 +56,7 @@ def sampleJsonInput():
                 }
             '''
     return input
+
 
 def test_webhookresponse(client, sampleJsonInput):
     resp = client.post('/webhook', data=sampleJsonInput)

@@ -1,30 +1,37 @@
 
-import texttable
-
 import app
-# FIXME: @Graham: how do i import a var to make this PEP8?
-# import heroku_db_creds
+import texttable
 
 
 def get_data():
-    db_query = "SELECT ticket_id, first_name, issue_type FROM public.example_table"
-    result = app.db_connection(db_query)
+    query = app.LineDB.query.all()
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
 
+    result = []
+    for row in query:
+        ticket_id = row.id
+        first_name = row.first_name
+        issue_type = row.issue_type
+        callback_method = row.callback_method
+        callback_details = row.callback_details
+
+        result.append((ticket_id, first_name, issue_type, callback_method, callback_details))
+
+    # print(result)
     pretty_result = format_records(result)
     return pretty_result
 
 
 def format_records(result):
     tab = texttable.Texttable()
-    headings = ['Ticket ID', 'First Name', 'Issue Type']
+    headings = ['Ticket ID', 'Name', 'Issue', 'Callback Method', 'Details']
 
     # Table customizations
     tab.header(headings)
     # tab.set_deco(texttable.Texttable.HEADER | texttable.Texttable.VLINES)
     tab.set_deco(texttable.Texttable.VLINES)
     tab.set_chars(['-', ':', '+', '-'])
-    tab.set_cols_align(['r', 'c', 'l'])
+    tab.set_cols_align(['r', 'r', 'l', 'l', 'l'])
 
     for row in result:
         tab.add_row(row)
@@ -37,4 +44,4 @@ def format_records(result):
     return table
 
 if __name__ == '__main__':
-    get_data()
+    print(get_data())
