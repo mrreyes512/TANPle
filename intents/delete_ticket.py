@@ -24,7 +24,7 @@ def delete_data(req):
         row_info = "Not able to delete ticket ID : " + str(ticket_num)
 
     except:
-        # unable to add exception for:
+        # FIXME: add more specific except block
         # sqlalchemy.exc.DataError: (psycopg2.DataError) invalid input syntax for integer: "remove "
         app.db.session.rollback()
         print("There may be a bad WHERE clause: " + str(ticket_num))
@@ -46,7 +46,6 @@ def parse_data(req):
 
 
 if __name__ == '__main__':
-    json_data = open('req.json', 'r').readlines()
     req = json.load(open('req.json'))
 
-    delete_data(req)
+    print(delete_data(req))

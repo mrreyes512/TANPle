@@ -1,22 +1,23 @@
 
-import texttable
-
 import app
-import pdb
-
-# REVIEW: @Graham: how do i import a var to make this PEP8?
-# import heroku_db_creds
+import texttable
 
 
 def get_data():
-    # pdb.set_trace()
-    db_query = "SELECT * FROM public.mvp_table"
-    result = app.db_connection(db_query)
-    # result = app.LineDB.query.all()
+    query = app.LineDB.query.all()
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
 
-    # print(result)
+    result = []
+    for row in query:
+        ticket_id = row.id
+        first_name = row.first_name
+        issue_type = row.issue_type
+        callback_method = row.callback_method
+        callback_details = row.callback_details
 
+        result.append((ticket_id, first_name, issue_type, callback_method, callback_details))
+
+    # print(result)
     pretty_result = format_records(result)
     return pretty_result
 
@@ -43,5 +44,4 @@ def format_records(result):
     return table
 
 if __name__ == '__main__':
-    table = get_data()
-    print(table)
+    print(get_data())

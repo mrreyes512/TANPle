@@ -5,24 +5,36 @@ import json
 
 def post_data(req):
     first_name, issue_type, callback_method, callback_details = parse_data(req)
-
-    # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
     customer = app.LineDB(first_name, issue_type, callback_method, callback_details)
-    app.db.session.add(customer)
-    app.db.session.commit()
 
-    ticket_id = 2
-    post_summary = "Ticket ID : {}\nGiven Name : {}\nIssue Summary : {}\n" \
-                   "Callback Method : {}\nCallback Details : {}".format(
-        ticket_id,
-        first_name,
-        issue_type,
-        callback_method,
-        callback_details
-    )
+    try:
+        app.db.session.add(customer)
+        app.db.session.flush()
+        app.db.session.commit()
+        # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
 
-    print(post_summary)
+        ticket_id = customer.id
+        post_summary = "Ticket ID : {}\n" \
+                       " Given Name : {}\n" \
+                       " Issue Summary : {}\n" \
+                       " Callback Method : {}\n" \
+                       " Callback Details : {}"\
+            .format(
+                ticket_id,
+                first_name,
+                issue_type,
+                callback_method,
+                callback_details
+            )
 
+    except:
+        # FIXME: more specific except block
+        # 2018-03-04T08:10:08.573296+00:00 app[web.1]: - sqlalchemy.exc.InternalError:
+        # (psycopg2.InternalError) current transaction is aborted, commands ignored until end of transaction block
+        post_summary = "There was an error creating your ticket"
+        app.db.session.rollback()
+
+    # print(post_summary)
     return post_summary
 
 
@@ -57,9 +69,6 @@ def parse_data(req):
 
 
 if __name__ == '__main__':
-    # json_data = open('req.json', 'r').readlines()
     req = json.load(open('req.json'))
-    # print(req)
-    post_data(req)
 
-
+    print(post_data(req))

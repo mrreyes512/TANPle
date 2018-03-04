@@ -49,7 +49,6 @@ def parse_data(req):
 
 
 if __name__ == '__main__':
-    json_data = open('req.json', 'r').readlines()
     req = json.load(open('req.json'))
 
     print(get_ticket(req))
