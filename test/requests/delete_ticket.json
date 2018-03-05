@@ -1,0 +1,34 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "timestamp": "2018-03-05T02:04:31.231Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "yes, remove 9",
+    "action": "deleteTicket",
+    "actionIncomplete": false,
+    "parameters": {
+      "ticket_id": "9"
+    },
+    "contexts": [
+      {
+        "name": "queryticketprompt",
+        "parameters": {
+          "ticket_id": "9",
+          "ticket_id.original": "9"
+        },
+        "lifespan": 5
+      }
+    ],
+    "metadata": {
+      "intentId": "00000000-0000-0000-0000-000000000000",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "endConversation": true,
+      "webhookResponseTime": 205,
+      "intentName": "5-deleteTicket"
+    },
+    "score": 1
+  },
+  "sessionId": "00000000-0000-0000-0000-000000000000"
+}

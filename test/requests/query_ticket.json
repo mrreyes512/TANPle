@@ -1,0 +1,33 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "timestamp": "2018-03-05T02:01:37.944Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "i'll take ticket 9",
+    "action": "queryTicket",
+    "actionIncomplete": false,
+    "parameters": {
+      "ticket_id": "9"
+    },
+    "contexts": [
+      {
+        "name": "queryticketprompt",
+        "parameters": {
+          "ticket_id": "9",
+          "ticket_id.original": "9"
+        },
+        "lifespan": 5
+      }
+    ],
+    "metadata": {
+      "intentId": "00000000-0000-0000-0000-000000000000",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 8501,
+      "intentName": "4-queryTicket"
+    },
+    "score": 0.7699999809265137
+  },
+  "sessionId": "00000000-0000-0000-0000-000000000000"
+}

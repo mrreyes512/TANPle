@@ -70,27 +70,6 @@ def webhook():
     return r
 
 
-# def db_connection(db_query):
-#     parse.uses_netloc.append("postgres")
-#     url = parse.urlparse(os.environ["DATABASE_URL"])
-#     # DATABASE_URL set in : heroku config
-#
-#     conn = psycopg2.connect(
-#         database=url.path[1:],
-#         user=url.username,
-#         password=url.password,
-#         host=url.hostname,
-#         port=url.port
-#     )
-#
-#     cur = conn.cursor()
-#     cur.execute(db_query)
-#
-#     query_results = cur.fetchall()
-#
-#     return query_results
-
-
 def route_action(req):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()

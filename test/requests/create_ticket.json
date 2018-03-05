@@ -1,0 +1,45 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "timestamp": "2018-03-04T23:21:42.606Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "Call me 512 4855555",
+    "action": "createTicket",
+    "actionIncomplete": false,
+    "parameters": {
+      "callback_method": "phone",
+      "callback_details": "512 4855555"
+    },
+    "contexts": [
+      {
+        "name": "info_createticket",
+        "parameters": {
+          "given-name.original": "John",
+          "callback_method.original": "Call",
+          "last-name.original": "",
+          "issue_sum.original": "1",
+          "tech_id": "",
+          "tech_id.original": "",
+          "given-name": "John",
+          "callback_method": "phone",
+          "issue_sum": "Port Turnup",
+          "callback_details": "512 4855555",
+          "callback_details.original": "512 4855555",
+          "last-name": ""
+        },
+        "lifespan": 5
+      }
+    ],
+    "metadata": {
+      "intentId": "00000000-0000-0000-0000-000000000000",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "endConversation": true,
+      "webhookResponseTime": 8506,
+      "intentName": "1-createTicket - collectAuth - collectIssue - collectFollowup"
+    },
+    "score": 1
+  },
+  "sessionId": "00000000-0000-0000-0000-000000000000"
+}
