@@ -1,31 +1,38 @@
-# ![TANPle logo](www/TANPle_logo_sm.png)TANPle 
+# TANPle 
 **Take A Number Please**
 
-Author: Mark Reyes
+Author: Mark Reyes 
 
 Last Update: 3/3/2018
-<table>
-  <tr>
-    <td><b>Take A Number Please</b><p><p>Author: Mark Reyes<p>Last Update: 3/3/2018</td>
-    <td><img src="www/TANPle_logo_sm.png" alt="TANPle Logo"></td>
-</td>
-  </tr>
-</table>
 
 Have you ever approached a customer service desk in a department store to find a ticket dispenser? Once you pulled a ticket from the dispenser, you're free to roam and take care of other business while waiting for support to be free to help.
-That's the same concept behind TANPle! A bot facilitated digital ticket experience
 
-Except now a bot will facilitate the ticket assignment for customers and collect some basic information and allow the support team to do some leg-work prior to customer engagement. This would possibly allow the
+That's the same concept behind TANPle! A bot facilitated digital ticket experience that will free up technician time while waiting on the phone. This will allow support teams to do a little leg-work, and possibly resolve issues prior to engagement. A much needed improvement over the blind inbound call queue. 
+
+TANPle will categorize issues to 4 main types:
+1) Port Turnups
+2) CPE Configuration Problems
+3) Firmware Upgrades
+4) Carrier Testing
+
 
 Getting Started
 ------------
+With [Dialog Flow's Integrations](https://dialogflow.com/docs/integrations/) this bot can be easily be integrated in many platforms.
+There are currently 2 methods implemented: **Cisco Spark**, and **SMS Text messages**. 
 
-Installation
-~~~~~~~~~~~~~~~~~~~~
+### Cisco Spark
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+In Cisco Spark you will have to search for the TANPle Bot by clicking the '+' sign under people: 
 
-### Prerequisites
+![Getting Started Spark](www/getting_started_spark.png)
+
+Now you are in a one-to-one conversation with the bot.
+You should also be able to invite this bot to group chats as well.*
+
+> Group chats with TANPle: You will have to mention @Take for interaction. Creating tickets within group Spaces is difficult. 
+
+### SMS Text Messages
 
 What things you need to install the software and how to install them
 
@@ -33,7 +40,8 @@ What things you need to install the software and how to install them
 Give examples
 ```
 
-### Installing
+Installing
+------------
 
 A step by step series of examples that tell you have to get a development env running
 
