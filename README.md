@@ -6,12 +6,13 @@ Author: Mark Reyes
 Last Update: 3/3/2018
 <table>
   <tr>
+    <td><b>Take A Number Please</b><p><p>Author: Mark Reyes<p>Last Update: 3/3/2018</td>
     <td><img src="www/TANPle_logo_sm.png" alt="TANPle Logo"></td>
-    <td>Have you ever approached a customer service desk in a department store to find a ticket dispenser? Once you pulled a ticket from the dispenser, you're free to roam and take care of other business while waiting for support to be free to help.
 </td>
   </tr>
 </table>
 
+Have you ever approached a customer service desk in a department store to find a ticket dispenser? Once you pulled a ticket from the dispenser, you're free to roam and take care of other business while waiting for support to be free to help.
 That's the same concept behind TANPle! A bot facilitated digital ticket experience
 
 Except now a bot will facilitate the ticket assignment for customers and collect some basic information and allow the support team to do some leg-work prior to customer engagement. This would possibly allow the
