@@ -9,10 +9,10 @@ That's the same concept behind TANPle! A bot-facilitated digital ticket experien
 
 TANPle will categorize issues to 4 main types:
 
-1) Port Turnups
-2) CPE Configuration Problems
-3) Firmware Upgrades
-4) Carrier Testing
+  1) Port Turnups
+  2) CPE Configuration Problems
+  3) Firmware Upgrades
+  4) Carrier Testing
 
 
 Getting Started
