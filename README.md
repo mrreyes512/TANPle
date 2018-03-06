@@ -9,10 +9,10 @@ That's the same concept behind TANPle! A bot-facilitated digital ticket experien
 
 TANPle will categorize issues to 4 main types:
 
-  1) Port Turnups
-  2) CPE Configuration Problems
-  3) Firmware Upgrades
-  4) Carrier Testing
+  1. Port Turnups
+  2. CPE Configuration Problems
+  3. Firmware Upgrades
+  4. Carrier Testing
 
 
 Getting Started
@@ -42,9 +42,9 @@ Conversations
 TANPle has the concept of having a conversation from both the Inbound Customer and Support Team. 
 There are 3 main conversations(also known as intents) that are conveyed with this bot: 
 
-1) Creating a ticket for support.
-2) Checking the line status.
-3) Engaging a customer.
+  1. Creating a ticket for support.
+  2. Checking the line status.
+  3. Engaging a customer.
 
 Let's explore how to start these conversations with TANPle.
 
@@ -63,9 +63,9 @@ To check the current line status, simply ask: "Who's in line?"
 ### Engaging Customers
 When Support Teams are ready to engage a customer, proves to be simple as well. 
 
-* First: Check the line (following the step above) to get a ticket id. 
-* Then: Tell TANPle that you are helping that ticket by: "I've got `ticket id`"
-* Finally: Confirm you're helping by: "Yes, remove `ticket id`"
+  * **First**: Check the line (following the step above) to get a ticket id. 
+  * **Then**: Tell TANPle that you are helping that ticket by: "**I've got** `ticket id`"
+  * **Finally**: Confirm you're helping by: "**Yes, remove** `ticket id`"
 
 ![Convo Engagment](www/convo_delete.png)
 
