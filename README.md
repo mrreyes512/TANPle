@@ -1,7 +1,9 @@
 # TANPle 
 **Take A Number Please**
 
-Have you ever needed to talk with Customer Support in a department store, but you arrive to find a long line of customers ahead of you? Call-in Customer Support seems to be the same way. You're placed in a phone queue with no idea of who’s in front of you or how far you’ve progressed in the line. Wouldn't you prefer **a call-back system that will contact you** when it's your turn - allowing you to wrap up with the customer or take care of other matters while you're waiting? **A much more efficient and effective way to work!**
+Have you ever needed to talk with Customer Support in a department store, but you arrive to find a long line of customers ahead of you? Call-in Customer Support seems to be the same way. You're placed in a phone queue with no idea of who’s in front of you or how far you’ve progressed in the line. 
+
+Wouldn't you prefer **a call-back system that will contact you** when it's your turn - allowing you to wrap up with the customer or take care of other matters while you're waiting? **A much more efficient and effective way to work!**
 
 That's the same concept behind TANPle! A bot-facilitated digital ticket experience that will free up hours spent waiting on the phone. By gathering just a little information up front, TANPle will allow support teams to do a little pre-engagement leg-work, and possibly resolve issues prior to customer call-back. 
 
