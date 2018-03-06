@@ -1,11 +1,12 @@
 # TANPle 
 **Take A Number Please**
 
-Have you ever approached a customer service desk in a department store to find a ticket dispenser? Once you pulled a ticket from the dispenser, you're free to roam and take care of other business while waiting for support to be free to help.
+Have you ever needed to talk with Customer Support in a department store, but you arrive to find a long line of customers ahead of you? Call-in Customer Support seems to be the same way. You're placed in a phone queue with no idea of who’s in front of you or how far you’ve progressed in the line. Wouldn't you prefer **a call-back system that will contact you** when it's your turn - allowing you to wrap up with the customer or take care of other matters while you're waiting? **A much more efficient and effective way to work!**
 
-That's the same concept behind TANPle! A bot facilitated digital ticket experience that will free up technician time while waiting on the phone. This will allow support teams to do a little leg-work, and possibly resolve issues prior to engagement. A much needed improvement over the blind inbound call queue. 
+That's the same concept behind TANPle! A bot-facilitated digital ticket experience that will free up hours spent waiting on the phone. By gathering just a little information up front, TANPle will allow support teams to do a little pre-engagement leg-work, and possibly resolve issues prior to customer call-back. 
 
 TANPle will categorize issues to 4 main types:
+
 1) Port Turnups
 2) CPE Configuration Problems
 3) Firmware Upgrades
@@ -24,87 +25,77 @@ In Cisco Spark you will have to search for the TANPle Bot by clicking the '+' si
 ![Getting Started Spark](www/getting_started_spark.png)
 
 Now you are in a one-to-one conversation with the bot.
-You should also be able to invite this bot to group chats as well.*
+You should also be able to invite this bot to group chats as well.
 
-> Group chats with TANPle: You will have to mention @Take for interaction. Creating tickets within group Spaces is difficult. 
+> **Group chats with TANPle**: You will have to mention @Take for interaction. Creating tickets within group Spaces is difficult. 
 
 ### SMS Text Messages
 
-What things you need to install the software and how to install them
+TANPle can also be engaged with SMS by any phone's text messaging service. 
 
-```
-Give examples
-```
+![Getting_Started_SMS](www/getting_started_sms.png)
 
-Installing
+Conversations
 ------------
+TANPle has the concept of having a conversation from both the Inbound Customer and Support Team. 
+There are 3 main conversations(also known as intents) that are conveyed with this bot: 
 
-A step by step series of examples that tell you have to get a development env running
+1) Creating a ticket for support.
+2) Checking the line status.
+3) Engaging a customer.
 
-Say what the step will be
+Let's explore how to start these conversations with TANPle.
 
-```
-Give the example
-```
+### Creating A Ticket
+To create a ticket for our Support team to follow up with you, say: "Ticket Please"
 
-And repeat
+![Convo Ticket Please](www/convo_ticket_please.png)
 
-```
-until finished
-```
+TANPle will attempt to get some basic information to allow the Support Team to investigate your issue.
 
-End with an example of getting some data out of the system or using it for a little demo
+### Checking Line Status
+To check the current line status, simply ask: "Who's in line?"
 
-## Running the tests
+![Convo Line Status](www/convo_line.png)
 
-Explain how to run the automated tests for this system
+### Engaging Customers
+When Support Teams are ready to engage a customer, proves to be simple as well. 
 
-### Break down into end to end tests
+* First: Check the line (following the step above) to get a ticket id. 
+* Then: Tell TANPle that you are helping that ticket by: "I've got `ticket id`"
+* Finally: Confirm you're helping by: "Yes, remove `ticket id`"
 
-Explain what these tests test and why
+![Convo Engagment](www/convo_delete.png)
 
-```
-Give an example
-```
+> **Note in Group Spaces**: For TANPle to recognize your comment needs attention, you must mention him by: @Take
+  
 
-### And coding style tests
+Development and Deployment
+------------
+Please see our Wiki for development and how to stand up your own instance. 
 
-Explain what these tests test and why
+### Built With
 
-```
-Give an example
-```
+* [Heroku](https://www.heroku.com/) - Web Server and Postgres DB backend
+* [Dialogflow](https://dialogflow.com/) - Machine learning conversational middleware
+* [Spark](https://developer.ciscospark.com/) - Instant Messaging platform for user frontend
+* [Twilio](https://www.twilio.com/) - SMS Messaging platform for user frontend
+* [Travis CI](https://travis-ci.org/) - CI/CD pipeline engine for github monitoring
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
+### Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+### Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
-## Authors
+### Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Mark Reyes** - *Initial work* - [Send Mark a note](mailto:mark.reyes@charter.com)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
+### Acknowledgments
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-Author: Mark Reyes 
-
-Last Update: 3/3/2018
+Special Thanks to Graham and Clara for their Python expertise and guidance. 
