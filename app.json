@@ -1,0 +1,7 @@
+{
+  "name": "TANPle webhook",
+  "description": "TANPle webhook",
+  "repository": "https://github.com/mrreyes512/TANPle",
+  "logo": "https://github.com/mrreyes512/TANPle/blob/master/www/TANPle.png?raw=true",
+  "keywords": ["api.ai", "natural language"]
+}
