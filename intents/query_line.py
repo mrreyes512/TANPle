@@ -6,6 +6,7 @@ import texttable
 def get_data():
     query = app.LineDB.query.all()
     # TODO: add logging feature of result here. https://youtu.be/jxmzY9soFXg
+    print(query)
 
     result = []
     for row in query:
@@ -17,7 +18,7 @@ def get_data():
 
         result.append((ticket_id, first_name, issue_type, callback_method, callback_details))
 
-    # print(result)
+    print(result)
     pretty_result = format_records(result)
     return pretty_result
 

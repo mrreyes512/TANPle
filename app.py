@@ -13,7 +13,7 @@ from urllib import parse
 from flask import Flask
 from flask import request
 from flask import make_response
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 import pdb
 
