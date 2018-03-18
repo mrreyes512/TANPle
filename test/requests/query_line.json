@@ -1,0 +1,22 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "timestamp": "2018-03-04T22:03:44.983Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "line",
+    "action": "queryLine",
+    "actionIncomplete": false,
+    "parameters": {},
+    "contexts": [],
+    "metadata": {
+      "intentId": "00000000-0000-0000-0000-000000000000",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 209,
+      "intentName": "2-queryLine"
+    },
+    "score": 1
+  },
+  "sessionId": "00000000-0000-0000-0000-000000000000"
+}

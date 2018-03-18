@@ -67,9 +67,12 @@ def webhook():
 
     r = make_response(json_convert)
     r.headers['Content-Type'] = 'application/json'
+    print("**RETURN**\n")
+    print(r)
     return r
 
 
+<<<<<<< HEAD
 # def db_connection(db_query):
 #     parse.uses_netloc.append("postgres")
 #     url = parse.urlparse(os.environ["DATABASE_URL"])
@@ -91,6 +94,8 @@ def webhook():
 #     return query_results
 
 
+=======
+>>>>>>> develop
 def route_action(req):
     if req.get("result").get("action") == "queryLine":
         res = process_query_line()
@@ -133,6 +138,8 @@ def process_create_ticket(req):
     speech = "Added your ticket in with the below:\n\n"
     speech = speech + post
 
+<<<<<<< HEAD
+=======
     print(speech)
     return {
         "speech": speech,
@@ -140,6 +147,22 @@ def process_create_ticket(req):
     }
 
 
+def process_query_ticket(req):
+    post = intents.query_ticket.get_ticket(req)
+
+    speech = "Just to verify, you're attempting to help out:\n"
+    speech = speech + post
+    speech = speech + "\n\n**Please respond with: 'yes, remove <number>'"
+
+>>>>>>> develop
+    print(speech)
+    return {
+        "speech": speech,
+        "displayText": speech
+    }
+
+
+<<<<<<< HEAD
 def process_query_ticket(req):
     post = intents.query_ticket.get_ticket(req)
 
@@ -157,6 +180,11 @@ def process_query_ticket(req):
 def process_delete_ticket(req):
     post = intents.delete_ticket.delete_data(req)
 
+=======
+def process_delete_ticket(req):
+    post = intents.delete_ticket.delete_data(req)
+
+>>>>>>> develop
     speech = "Attempting to remove ticket..\n"
     speech = speech + post
 
